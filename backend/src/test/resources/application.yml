@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: career-genie-test
+  datasource:
+    url: jdbc:h2:mem:careergenie_test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL;DATABASE_TO_LOWER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: 9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b
+    expiry-ms: 86400000
+  cors:
+    allowed-origins: http://localhost:3000
+  rate-limit:
+    capacity: 100
+    refill-tokens: 100
+    refill-duration-seconds: 60

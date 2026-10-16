@@ -1,0 +1,21 @@
+{
+  "name": "career-genie",
+  "version": "1.0.0",
+  "description": "Career Genie — AI-Powered CV Builder & Career Guidance Platform",
+  "main": "api/ai.js",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix frontend run dev",
+    "test": "node test-ai.js && node test-key-failover.js"
+  },
+  "keywords": [
+    "career-genie",
+    "resume-builder",
+    "ai-resume",
+    "career-match",
+    "ats-analyzer"
+  ],
+  "author": "",
+  "license": "MIT"
+}

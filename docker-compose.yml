@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: careergenie-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: careergenie
+      MYSQL_USER: ${DB_USERNAME:-careergenie}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-careergenie123}
+    ports:
+      - "3306:3306"
+    volumes:
+      - careergenie_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 5
+
+volumes:
+  careergenie_mysql_data:

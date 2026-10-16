@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo-icon.png" />
+    <link rel="apple-touch-icon" href="/logo-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0b0f19" />
+    <meta name="description" content="Career Genie — Next-generation AI-powered CV builder, skill gap analyzer, and career acceleration platform." />
+    <title>Career Genie — AI-Powered CV Builder & Career Guidance Platform</title>
+
+    <!-- Immediate theme bootstrap to prevent flash of wrong theme (FOUC) -->
+    <script>
+      (function() {
+        try {
+          const saved = localStorage.getItem('cg_theme');
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const activeTheme = (saved === 'dark' || saved === 'light') ? saved : (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', activeTheme);
+          document.documentElement.style.colorScheme = activeTheme;
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
